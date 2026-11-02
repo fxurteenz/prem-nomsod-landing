@@ -1,5 +1,5 @@
 /**
- * เปรม นมสด (Prem Nomsod) - Interactive Logic
+ * มอมอนมสด (Mo Mo Nomsod) - Interactive Logic
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -159,7 +159,7 @@ function initImageDialog() {
       const img = item.querySelector('img');
       const heading = item.querySelector('h4');
       if (img) {
-        const title = heading ? heading.textContent : 'บรรยากาศร้านเปรม นมสด';
+        const title = heading ? heading.textContent : 'บรรยากาศร้านมอมอนมสด';
         openModal(img.src, title);
       }
     });
