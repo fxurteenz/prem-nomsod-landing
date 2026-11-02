@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, dynamic-viewport-units=dynamic">
+  <title>เปรม นมสด | นมสดแท้ ขนมปังปิ้งเตาร้อน & บรรยากาศสุดชิลล์ยามค่ำคืน</title>
+  <meta name="description" content="เปรม นมสด ร้านนมสด ขนมปังปิ้ง ปังเย็นภูเขาไฟ และของทานเล่น บรรยากาศเปิดโล่งนั่งชิลล์ยามค่ำคืน เริ่มต้นเพียง 12 บาท เปิดบริการ 17:00 - 22:00 น.">
+  <meta name="keywords" content="เปรม นมสด, ร้านนมสด, ขนมปังปิ้ง, ปังเย็น, นมสดแท้, ร้านของหวานกลางคืน, ร้านนั่งชิลล์">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="เปรม นมสด | นมสดแท้ ขนมปังปิ้งเตาหอมกรุ่น">
+  <meta property="og:description" content="สัมผัสความละมุนอบอุ่นกับนมสดแท้ ขนมปังปิ้งร้อนๆ และปังเย็นภูเขาไฟ เริ่มต้นเพียง 12 บาท">
+  <meta property="og:image" content="logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- Google Fonts: Mitr & Prompt for Cozy Modern Milk Bar Feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Floating Milk Wave Decoration Top Bar -->
+  <aside class="top-status-bar" aria-label="สถานะร้าน">
+    <div class="container top-status-inner">
+      <div class="live-status" id="liveStatusContainer">
+        <span class="status-dot" id="statusDot"></span>
+        <span class="status-text" id="statusText">กำลังตรวจสอบเวลาทำการ...</span>
+      </div>
+      <div class="top-announcement">
+        <span class="announcement-pill">🥛 นมสดแท้ 100%</span>
+        <span class="announcement-quote">"ปังปิ้งเตาหอมกรุ่น นมสดหวานมัน ฟินทุกคำในราคาสบายกระเป๋า"</span>
+      </div>
+      <div class="top-hours">
+        <span class="icon-clock">🕒</span> เปิดทุกวัน 17:00 - 22:00 น.
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-link" aria-label="เปรม นมสด หน้าแรก">
+        <div class="brand-logo-wrap">
+          <img src="logo.png" alt="โลโก้ร้าน เปรม นมสด" class="brand-logo" width="60" height="60" loading="eager" fetchpriority="high">
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">เปรม นมสด</span>
+          <span class="brand-tagline">Fresh Milk & Cozy Sweet Toast</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-menu" aria-label="เมนูหลัก">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">หน้าแรก</a></li>
+          <li><a href="#story" class="nav-link">เรื่องราว</a></li>
+          <li><a href="#menu" class="nav-link">เมนูอร่อย</a></li>
+          <li><a href="#atmosphere" class="nav-link">บรรยากาศ</a></li>
+          <li><a href="#pricing" class="nav-link">ตารางราคา</a></li>
+          <li><a href="#contact" class="nav-link">ที่ตั้ง & ติดต่อ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action & Mobile Toggle -->
+      <div class="header-actions">
+        <a href="#menu" class="btn btn-primary btn-sm btn-bounce">
+          <span class="btn-icon">🍞</span> สั่งเมนูฟินๆ
+        </a>
+        <button type="button" class="mobile-toggle" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="เปิดเมนูมือถือ">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileNav" aria-hidden="true">
+    <div class="mobile-drawer-overlay" id="mobileOverlay"></div>
+    <div class="mobile-drawer-body">
+      <div class="mobile-drawer-header">
+        <div class="brand-text">
+          <span class="brand-name">เปรม นมสด</span>
+          <span class="brand-tagline">เปิด 17:00 - 22:00 น.</span>
+        </div>
+        <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="ปิดเมนู">&times;</button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="#hero" class="mobile-link">🏠 หน้าแรก</a></li>
+        <li><a href="#story" class="mobile-link">🥛 เรื่องราวร้าน</a></li>
+        <li><a href="#menu" class="mobile-link">🍞 เมนูแนะนำ</a></li>
+        <li><a href="#atmosphere" class="mobile-link">✨ บรรยากาศร้าน</a></li>
+        <li><a href="#pricing" class="mobile-link">📋 ราคา & กระดานเมนู</a></li>
+        <li><a href="#contact" class="mobile-link">📍 ที่ตั้ง & ติดต่อเรา</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="#menu" class="btn btn-primary btn-block">ดูเมนูทั้งหมด</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <!-- Background Creamy Blobs & Floating Elements -->
+      <div class="hero-decorations" aria-hidden="true">
+        <div class="milk-bubble bubble-1"></div>
+        <div class="milk-bubble bubble-2"></div>
+        <div class="milk-bubble bubble-3"></div>
+        <div class="floating-sticker sticker-milk">🥛 นมสดแท้</div>
+        <div class="floating-sticker sticker-toast">🍞 ปังปิ้ง 12.-</div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge-wrapper">
+            <span class="hero-badge">
+              <span class="sparkle">✨</span> อิ่มฟิน สบายกระเป๋า ยามค่ำคืน
+            </span>
+          </div>
+
+          <h1 class="hero-title">
+            ความสุขที่ลงตัว <br>
+            กับ <span class="highlight-text">เปรม นมสด</span>
+          </h1>
+
+          <p class="hero-description">
+            เติมความหวานละมุนให้อุ่นใจกับนมสดแท้ 100% หอมมันกลมกล่อม ขนมปังปิ้งเตาร้อนกรอบนอกนุ่มใน 
+            ปังเย็นภูเขาไฟเครื่องแน่น และของทานเล่นทอดสดใหม่ ในบรรยากาศสบายๆ นั่งชิลล์คุยกับเพื่อนได้ถึง 4 ทุ่ม
+          </p>
+
+          <div class="hero-meta-grid">
+            <div class="meta-item">
+              <div class="meta-icon">💰</div>
+              <div class="meta-info">
+                <strong>เริ่มต้น 12 บาท</strong>
+                <span>ปังปิ้งเตาหอมๆ</span>
+              </div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-icon">🥛</div>
+              <div class="meta-info">
+                <strong>นมสด 20 / 25 / 30</strong>
+                <span>ร้อน • เย็น • ปั่น</span>
+              </div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-icon">🌙</div>
+              <div class="meta-info">
+                <strong>17:00 - 22:00 น.</strong>
+                <span>นั่งชิลล์รับลมเย็น</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-primary btn-lg">
+              <span>สำรวจเมนูความอร่อย</span>
+              <span class="btn-arrow">&rarr;</span>
+            </a>
+            <a href="#atmosphere" class="btn btn-outline btn-lg">
+              <span>ชมบรรยากาศร้าน</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-stack">
+            <!-- Main Hero Image Frame -->
+            <div class="hero-main-card">
+              <img src="เมนูร้าน/492412841_2527023350970345_4918805182070823305_n.jpg" 
+                   alt="ขนมปังปิ้งเนยแยมส้มพร้อมแก้วเปรมนมสด" 
+                   class="hero-img-main" 
+                   loading="eager">
+              <div class="hero-img-badge">
+                <span class="badge-star">⭐</span> เมนูฮิตประจำร้าน
+              </div>
+              <div class="hero-caption">
+                <h4>ปังปิ้งเนยแยม + นมสดเย็น</h4>
+                <p>รสชาติความคลาสสิกที่ใครมาก็ต้องสั่ง</p>
+              </div>
+            </div>
+
+            <!-- Floating Sub-card 1: Pink Milk -->
+            <div class="hero-sub-card card-pink-milk">
+              <img src="เมนูร้าน/493473120_2528534147485932_1438962868243656304_n.jpg" 
+                   alt="นมชมพูโหลแก้วเปรมนมสด" 
+                   class="hero-img-sub" 
+                   loading="lazy">
+              <div class="sub-card-text">
+                <strong>นมชมพูละมุนใจ</strong>
+                <span>เสิร์ฟในโหลแก้วสุดคูล</span>
+              </div>
+            </div>
+
+            <!-- Floating Sub-card 2: Big Bingsu Toast -->
+            <div class="hero-sub-card card-bingsu">
+              <img src="เมนูร้าน/492846847_2529634777375869_7035050521733813971_n.jpg" 
+                   alt="ปังเย็นภูเขาไฟท็อปปิ้งล้นชาม" 
+                   class="hero-img-sub" 
+                   loading="lazy">
+              <div class="sub-card-text">
+                <strong>ปังเย็นภูเขาไฟ</strong>
+                <span>เครื่องแน่นเย็นชื่นใจ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wave Bottom Transition -->
+      <div class="wave-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
+          <path d="M0,32L48,42.7C96,53,192,75,288,80C384,85,480,75,576,58.7C672,43,768,21,864,21.3C960,21,1056,43,1152,58.7C1248,75,1344,85,1392,90.7L1440,96L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="#FAF5ED"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Story & Features Section -->
+    <section class="story-section" id="story">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="sub-title">WELCOME TO PREM NOMSOD</span>
+          <h2 class="section-title">เอกลักษณ์ความเปรม ที่อยากให้คุณได้ลอง</h2>
+          <div class="milk-drop-divider" aria-hidden="true">
+            <span></span><span class="drop"></span><span></span>
+          </div>
+          <p class="section-desc">
+            ร้านนมสดและของหวานบรรยากาศสบายๆ สำหรับทุกคน ไม่ว่าจะมานั่งทำการบ้าน เมาท์มอยกับเพื่อน 
+            หรือแวะเติมความหวานหลังเลิกงาน ในราคาเริ่มต้นเพียงมิตรภาพ
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper milk-bg">
+              <span class="feature-icon">🥛</span>
+            </div>
+            <h3 class="feature-title">นมสดแท้ 100%</h3>
+            <p class="feature-text">
+              ต้มสดใหม่ทุกวัน หอมกลิ่นนมแท้ๆ สั่งได้ทั้งแบบร้อน อุ่นสบายท้อง แบบเย็นสดชื่น หรือแบบปั่นเนื้อเนียนนุ่ม
+            </p>
+            <div class="feature-pill">ร้อน 20.- | เย็น 25.- | ปั่น 30.-</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper toast-bg">
+              <span class="feature-icon">🍞</span>
+            </div>
+            <h3 class="feature-title">ปังปิ้งเตาร้อน หอมเนยสด</h3>
+            <p class="feature-text">
+              ขนมปังแผ่นหนากรอบนอกนุ่มใน ย่างจนหอมเนยฉ่ำเยิ้ม ราดหน้าสังขยา นมข้น ช็อกโกแลต หรือผงโอวัลตินทะลัก
+            </p>
+            <div class="feature-pill">เริ่มต้นเพียง 12.- บาท</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper ice-bg">
+              <span class="feature-icon">🍧</span>
+            </div>
+            <h3 class="feature-title">ปังเย็นภูเขาไฟ & โซดา</h3>
+            <p class="feature-text">
+              ดับร้อนยามค่ำคืนด้วยปังเย็นชามโต ท็อปปิ้งล้นๆ ทั้งคอร์นเฟลก เวเฟอร์โรล หรือจะเลือกอิตาเลียนโซดาซ่าสดชื่น
+            </p>
+            <div class="feature-pill">อิตาเลียนโซดา 25.-</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper chill-bg">
+              <span class="feature-icon">✨</span>
+            </div>
+            <h3 class="feature-title">บรรยากาศ Open-Air แสนชิลล์</h3>
+            <p class="feature-text">
+              นั่งรับลมธรรมชาติใต้แสงไฟปิงปอง มีโต๊ะไม้สบายๆ และมุมถ่ายรูปสุดเก๋ เหมาะกับนัดเพื่อนมาผ่อนคลาย
+            </p>
+            <div class="feature-pill">เปิด 17:00 - 22:00 น.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Showcase Section with Filter Tabs -->
+    <section class="menu-section" id="menu">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="sub-title">DELICIOUS MENU</span>
+          <h2 class="section-title">เมนูความอร่อยร้านเปรม</h2>
+          <div class="milk-drop-divider" aria-hidden="true">
+            <span></span><span class="drop"></span><span></span>
+          </div>
+          <p class="section-desc">
+            คัดสรรเมนูยอดฮิตจากร้านเปรม นมสด ทานคู่กันอร่อยลงตัวทุกเมนู
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="menu-filter-bar">
+          <button type="button" class="filter-btn active" data-filter="all">ทั้งหมด (All)</button>
+          <button type="button" class="filter-btn" data-filter="toast">🍞 ขนมปังปิ้ง (Toast)</button>
+          <button type="button" class="filter-btn" data-filter="drinks">🥛 เครื่องดื่ม (Drinks)</button>
+          <button type="button" class="filter-btn" data-filter="dessert">🍧 ปังเย็น (Dessert)</button>
+          <button type="button" class="filter-btn" data-filter="snacks">🍟 ของทานเล่น (Snacks)</button>
+        </div>
+
+        <!-- Menu Cards Grid -->
+        <div class="menu-grid" id="menuGrid">
+
+          <!-- Item 1: ขนมปังปิ้งเนยแยมส้ม -->
+          <article class="menu-card" data-category="toast">
+            <div class="menu-card-img-wrap">
+              <img src="เมนูร้าน/492412841_2527023350970345_4918805182070823305_n.jpg" 
+                   alt="ขนมปังปิ้งเนยแยมส้ม" 
+                   class="menu-card-img" 
+                   loading="lazy">
+              <span class="menu-tag popular">ยอดนิยม</span>
+            </div>
+            <div class="menu-card-body">
+              <div class="menu-head">
+                <h3 class="menu-name">ขนมปังปิ้งเนย + แยมส้ม</h3>
+                <span class="menu-price">12.- / แผ่น</span>
+              </div>
+              <p class="menu-desc">ขนมปังปิ้งชิ้นหนา ย่างเตาร้อนๆ ทาเนยฉ่ำและแยมส้มรสหวานอมเปรี้ยว สดชื่นตัดเลี่ยน</p>
+              <div class="menu-footer">
+                <span class="flavor-badge">🧈 เนยฉ่ำ</span>
+                <span class="flavor-badge">🍊 แยมส้ม</span>
+                <button type="button" class="view-btn" data-img="เมนูร้าน/492412841_2527023350970345_4918805182070823305_n.jpg" data-title="ขนมปังปิ้งเนย + แยมส้ม">ดูรูปใหญ่ 🔍</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 2: ปังปิ้งช็อกโกแลตราดเยิ้ม -->
+          <article class="menu-card" data-category="toast">
+            <div class="menu-card-img-wrap">
+              <img src="เมนูร้าน/44318093_775478239458207_3282462492936110080_n.jpg" 
+                   alt="ขนมปังปิ้งช็อกโกแลตราดเยิ้ม" 
+                   class="menu-card-img" 
+                   loading="lazy">
+              <span class="menu-tag sweet">ช็อกเข้มข้น</span>
+            </div>
+            <div class="menu-card-body">
+              <div class="menu-head">
+                <h3 class="menu-name">ขนมปังปิ้งราดช็อกโกแลต</h3>
+                <span class="menu-price">15.-</span>
+              </div>
+              <p class="menu-desc">ขนมปังปิ้งกรอบนอกนุ่มใน ราดซอสช็อกโกแลตเข้มข้นแบบจัดเต็ม ลวดลายสวยงาม รสชาติเข้มสะใจ</p>
+              <div class="menu-footer">
+                <span class="flavor-badge">🍫 ช็อกโกแลต</span>
+                <span class="flavor-badge">🔥 ปิ้งเตาร้อน</span>
+                <button type="button" class="view-btn" data-img="เมนูร้าน/44318093_775478239458207_3282462492936110080_n.jpg" data-title="ขนมปังปิ้งราดช็อกโกแลต">ดูรูปใหญ่ 🔍</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 3: ปังปิ้งผงโอวัลติน -->
+          <article class="menu-card" data-category="toast">
+            <div class="menu-card-img-wrap">
+              <img src="เมนูร้าน/493540617_2527023530970327_8570458719034524791_n.jpg" 
+                   alt="ขนมปังปิ้งผงโอวัลตินภูเขาไฟ" 
+                   class="menu-card-img" 
+                   loading="lazy">
+              <span class="menu-tag hit">แนะนำ</span>
+            </div>
+            <div class="menu-card-body">
+              <div class="menu-head">
+                <h3 class="menu-name">ปังปิ้งโอวัลตินภูเขาไฟ</h3>
+                <span class="menu-price">15.-</span>
+              </div>
+              <p class="menu-desc">ขนมปังปิ้งทาเนยราดนมข้นหวาน โรยผงโอวัลตินกรุบกรอบพูนๆ หวานมันเคี้ยวเพลินถูกใจสายหวาน</p>
+              <div class="menu-footer">
+                <span class="flavor-badge">🤎 โอวัลติน</span>
+                <span class="flavor-badge">🥛 นมข้นเยิ้ม</span>
+                <button type="button" class="view-btn" data-img="เมนูร้าน/493540617_2527023530970327_8570458719034524791_n.jpg" data-title="ปังปิ้งโอวัลตินภูเขาไฟ">ดูรูปใหญ่ 🔍</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 4: นมชมพูโหลแก้ว -->
+          <article class="menu-card" data-category="drinks">
+            <div class="menu-card-img-wrap">
+              <img src="เมนูร้าน/493473120_2528534147485932_1438962868243656304_n.jpg" 
+                   alt="นมชมพูโหลแก้วสุดคลาสสิก" 
+                   class="menu-card-img" 
+                   loading="lazy">
+              <span class="menu-tag signature">Signature</span>
+            </div>
+            <div class="menu-card-body">
+              <div class="menu-head">
+                <h3 class="menu-name">นมชมพูโหลแก้วพรีเมียม</h3>
+                <span class="menu-price">25.- / 30.-</span>
+              </div>
+              <p class="menu-desc">นมชมพูหวานหอมละมุน เสิร์ฟในแก้ว Mason Jar ลายวินเทจ ติดสติ๊กเกอร์เปรมนมสด ถ่ายรูปสวยรสชาติดี</p>
+              <div class="menu-footer">
+                <span class="flavor-badge">🌸 หวานละมุน</span>
+                <span class="flavor-badge">🧊 เสิร์ฟเย็น/ปั่น</span>
+                <button type="button" class="view-btn" data-img="เมนูร้าน/493473120_2528534147485932_1438962868243656304_n.jpg" data-title="นมชมพูโหลแก้วพรีเมียม">ดูรูปใหญ่ 🔍</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 5: นมสดแท้แก้วเคลือบวินเทจ -->
+          <article class="menu-card" data-category="drinks">
+            <div class="menu-card-img-wrap">
+              <img src="บรรยากาศในร้าน/494147542_2529628654043148_5498278050551664507_n.jpg" 
+                   alt="นมสดแท้แก้วเคลือบโบราณ" 
+                   class="menu-card-img" 
+                   loading="lazy">
+              <span class="menu-tag best">คลาสสิก</span>
+            </div>
+            <div class="menu-card-body">
+              <div class="menu-head">
+                <h3 class="menu-name">นมสดแท้แก้วเคลือบโบราณ</h3>
+                <span class="menu-price">20.- / 25.-</span>
+              </div>
+              <p class="menu-desc">นมสดแท้ 100% หอมกลิ่นนมชัดเจน เสิร์ฟในแก้วเคลือบย้อนยุค สั่งทานคู่กับเวเฟอร์ช็อกโกแลตฟินสุดๆ</p>
+              <div class="menu-footer">
+                <span class="flavor-badge">🥛 นมแท้ 100%</span>
+                <span class="flavor-badge">☕ ร้อน/เย็น</span>
+                <button type="button" class="view-btn" data-img="บรรยากาศในร้าน/494147542_2529628654043148_5498278050551664507_n.jpg" data-title="นมสดแท้แก้วเคลือบโบราณ">ดูรูปใหญ่ 🔍</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 6: ปังเย็นภูเขาไฟชามยักษ์ -->
+          <article class="menu-card" data-category="dessert">
+            <div class="menu-card-img-wrap">
+              <img src="เมนูร้าน/492846847_2529634777375869_7035050521733813971_n.jpg" 
+                   alt="ปังเย็นภูเขาไฟท็อปปิ้งล้นชาม" 
+                   class="menu-card-img" 
+                   loading="lazy">
+              <span class="menu-tag jumbo">ชามยักษ์</span>
+            </div>
+            <div class="menu-card-body">
+              <div class="menu-head">
+                <h3 class="menu-name">ปังเย็นภูเขาไฟเครื่องทะลัก</h3>
+                <span class="menu-price">39.- / 49.-</span>
+              </div>
+              <p class="menu-desc">น้ำแข็งไสเนียนนุ่มราดนมสดและโกโก้เข้มข้น โปะด้วยคอร์นเฟลกกรุบกรอบ เวเฟอร์โรล และขนมปังปิ้งนุ่มๆ</p>
+              <div class="menu-footer">
+                <span class="flavor-badge">🍧 เย็นชื่นใจ</span>
+                <span class="flavor-badge">🥣 เครื่องแน่น</span>
+                <button type="button" class="view-btn" data-img="เมนูร้าน/492846847_2529634777375869_7035050521733813971_n.jpg" data-title="ปังเย็นภูเขาไฟเครื่องทะลัก">ดูรูปใหญ่ 🔍</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 7: เฟรนช์ฟรายส์ทอดกรอบ -->
+          <article class="menu-card" data-category="snacks">
+            <div class="menu-card-img-wrap">
+              <img src="เมนูร้าน/492942909_2528367987502548_811911000064678643_n.jpg" 
+                   alt="เฟรนช์ฟรายส์ทอดพร้อมซอส 3 ช่อง" 
+                   class="menu-card-img" 
+                   loading="lazy">
+              <span class="menu-tag crunchy">กรอบสะท้าน</span>
+            </div>
+            <div class="menu-card-body">
+              <div class="menu-head">
+                <h3 class="menu-name">เฟรนช์ฟรายส์ถาดใหญ่</h3>
+                <span class="menu-price">35.- / 40.-</span>
+              </div>
+              <p class="menu-desc">มันฝรั่งทอดร้อนๆ สีเหลืองทอง กรอบนอกนุ่มใน เสิร์ฟพร้อมซอสมะเขือเทศ มายองเนส และซอสพริก 3 สไตล์</p>
+              <div class="menu-footer">
+                <span class="flavor-badge">🍟 ทอดร้อนๆ</span>
+                <span class="flavor-badge">🥫 ซอส 3 หลุม</span>
+                <button type="button" class="view-btn" data-img="เมนูร้าน/492942909_2528367987502548_811911000064678643_n.jpg" data-title="เฟรนช์ฟรายส์ถาดใหญ่">ดูรูปใหญ่ 🔍</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Item 8: นักเก็ตไก่ & เกี๊ยวทอดกรอบ -->
+          <article class="menu-card" data-category="snacks">
+            <div class="menu-card-img-wrap">
+              <img src="เมนูร้าน/44342331_775477832791581_5534039281854578688_n.jpg" 
+                   alt="นักเก็ตไก่และเกี๊ยวทอด" 
+                   class="menu-card-img" 
+                   loading="lazy">
+              <span class="menu-tag tasty">ทานเพลิน</span>
+            </div>
+            <div class="menu-card-body">
+              <div class="menu-head">
+                <h3 class="menu-name">นักเก็ตไก่ & เกี๊ยวทอด</h3>
+                <span class="menu-price">35.-</span>
+              </div>
+              <p class="menu-desc">ของทานเล่นยอดฮิต นักเก็ตเนื้อแน่นและเกี๊ยวทอดกรอบสีทอง เสิร์ฟพร้อมน้ำจิ้มไก่รสหวานกลมกล่อม</p>
+              <div class="menu-footer">
+                <span class="flavor-badge">🍗 เนื้อแน่น</span>
+                <span class="flavor-badge">🥟 แป้งกรอบ</span>
+                <button type="button" class="view-btn" data-img="เมนูร้าน/44342331_775477832791581_5534039281854578688_n.jpg" data-title="นักเก็ตไก่ & เกี๊ยวทอด">ดูรูปใหญ่ 🔍</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Chalkboard & Pricing Highlight Section -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="pricing-card-wrap">
+          <div class="chalkboard-card">
+            <div class="board-frame-outer">
+              <div class="board-frame-inner">
+                <div class="board-header">
+                  <div class="chalk-icon">📋</div>
+                  <h3 class="chalk-title">กระดานเมนูหน้าร้าน • เปรม นมสด</h3>
+                  <p class="chalk-time">★ OPEN 5 PM - 10 PM ★</p>
+                </div>
+                <div class="chalk-divider">~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~</div>
+                
+                <div class="chalk-grid">
+                  <div class="chalk-row">
+                    <div class="chalk-item">
+                      <span class="chalk-name">🥛 นมสด (FRESH MILK)</span>
+                      <span class="chalk-note">ร้อน • เย็น • ปั่น</span>
+                    </div>
+                    <div class="chalk-price">20 / 25 / 30.-</div>
+                  </div>
+
+                  <div class="chalk-row">
+                    <div class="chalk-item">
+                      <span class="chalk-name">🍹 อิตาเลียนโซดา (ITALIAN SODA)</span>
+                      <span class="chalk-note">ซ่าสดชื่น ดับกระหาย</span>
+                    </div>
+                    <div class="chalk-price">25.-</div>
+                  </div>
+
+                  <div class="chalk-row">
+                    <div class="chalk-item">
+                      <span class="chalk-name">🍞 ขนมปังปิ้งเตาร้อน (TOAST)</span>
+                      <span class="chalk-note">เนยน้ำตาล, แยม, ช็อกโกแลต, สังขยา</span>
+                    </div>
+                    <div class="chalk-price">12.-</div>
+                  </div>
+
+                  <div class="chalk-row">
+                    <div class="chalk-item">
+                      <span class="chalk-name">🍟 ของทานเล่นทอดสดใหม่</span>
+                      <span class="chalk-note">เฟรนช์ฟรายส์, นักเก็ต, เกี๊ยวกรอบ</span>
+                    </div>
+                    <div class="chalk-price">35.-</div>
+                  </div>
+
+                  <div class="chalk-row">
+                    <div class="chalk-item">
+                      <span class="chalk-name">🍧 ปังเย็นภูเขาไฟชามโต</span>
+                      <span class="chalk-note">ท็อปปิ้งล้นๆ ชื่นใจ</span>
+                    </div>
+                    <div class="chalk-price">39.-</div>
+                  </div>
+                </div>
+
+                <div class="board-footer">
+                  <span class="chalk-star">★</span> ENJOY YOUR SWEET NIGHT <span class="chalk-star">★</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Notice & Real Photo -->
+          <div class="pricing-context">
+            <span class="sub-title">REAL ATMOSPHERE</span>
+            <h2 class="section-title">ราคาจับต้องได้ อร่อยได้ทุกวัน</h2>
+            <p class="context-desc">
+              ข้อมูลราคาจริงจากป้ายกระดานดำหน้าร้าน ที่เปิดต้อนรับลูกค้าตั้งแต่ 5 โมงเย็น จนถึง 4 ทุ่มตรง 
+              ไม่ว่าจะเป็นน้องๆ นักเรียน นักศึกษา หรือวัยทำงาน ก็สามารถมานั่งทานของหวานดับร้อน 
+              และพูดคุยกันได้อย่างสบายใจ
+            </p>
+
+            <div class="chalk-photo-preview">
+              <img src="บรรยากาศในร้าน/493940943_2527267730945907_8741123150059989016_n.jpg" 
+                   alt="ป้ายกระดานเมนูหน้าร้านเปรมนมสดตอนกลางคืน" 
+                   class="board-real-photo"
+                   loading="lazy">
+              <div class="photo-badge">📸 ภาพถ่ายจริงหน้าร้านยามค่ำคืน</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Atmosphere Gallery Section -->
+    <section class="atmosphere-section" id="atmosphere">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="sub-title">VIBES & HANGOUT</span>
+          <h2 class="section-title">บรรยากาศสุดชิลล์ในร้าน</h2>
+          <div class="milk-drop-divider" aria-hidden="true">
+            <span></span><span class="drop"></span><span></span>
+          </div>
+          <p class="section-desc">
+            สัมผัสบรรยากาศยามค่ำคืนอันอบอุ่น แสงไฟปิงปองสีนวล โต๊ะไม้โปร่งโล่ง และรอยยิ้มของเพื่อนๆ
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Atmosphere 1: กลุ่มเพื่อนในร้าน -->
+          <div class="gallery-item item-large">
+            <img src="บรรยากาศในร้าน/492549908_2527277360944944_1235157329857653281_n.jpg" 
+                 alt="บรรยากาศกลุ่มเพื่อนมานั่งสังสรรค์ในร้านเปรมนมสด" 
+                 loading="lazy">
+            <div class="gallery-overlay">
+              <h4>พบปะสังสรรค์กับแก๊งเพื่อน</h4>
+              <p>โต๊ะยาวรองรับกลุ่มเพื่อน นั่งพูดคุยหัวเราะกันได้อย่างเป็นกันเอง</p>
+            </div>
+          </div>
+
+          <!-- Atmosphere 2: หน้าร้านยามค่ำคืนไฟสว่าง -->
+          <div class="gallery-item">
+            <img src="บรรยากาศในร้าน/461514505_2344750892530926_8616067714999523478_n.jpg" 
+                 alt="ร้านเปรมนมสดยามค่ำคืนบรรยากาศอบอุ่น" 
+                 loading="lazy">
+            <div class="gallery-overlay">
+              <h4>บรรยากาศอบอุ่นใต้แสงไฟ</h4>
+              <p>ไฟปิงปองยามค่ำคืนให้ความรู้สึกผ่อนคลายและโรแมนติก</p>
+            </div>
+          </div>
+
+          <!-- Atmosphere 3: หน้าร้านและเคาน์เตอร์บาร์ -->
+          <div class="gallery-item">
+            <img src="บรรยากาศในร้าน/493940943_2527267730945907_8741123150059989016_n.jpg" 
+                 alt="หน้าร้านเคาน์เตอร์และป้ายเมนู" 
+                 loading="lazy">
+            <div class="gallery-overlay">
+              <h4>เคาน์เตอร์ชงเครื่องดื่มสดใหม่</h4>
+              <p>สั่งเครื่องดื่มนมสดและปังปิ้งทำสดใหม่แผ่นต่อแผ่น</p>
+            </div>
+          </div>
+
+          <!-- Atmosphere 4: โมเมนต์สนุกสนานของลูกค้า -->
+          <div class="gallery-item">
+            <img src="เมนูร้าน/492942909_2528367987502548_811911000064678643_n.jpg" 
+                 alt="ลูกค้ามีความสุขกับการทานของว่างในร้าน" 
+                 loading="lazy">
+            <div class="gallery-overlay">
+              <h4>รอยยิ้มและความทรงจำดีๆ</h4>
+              <p>มุมถ่ายภาพกับกระดานชอล์กน่ารักๆ ในร้าน</p>
+            </div>
+          </div>
+
+          <!-- Atmosphere 5: โต๊ะไม้และโคมไฟสุดโรแมนติก -->
+          <div class="gallery-item">
+            <img src="เมนูร้าน/492846847_2529634777375869_7035050521733813971_n.jpg" 
+                 alt="โต๊ะไม้ริมทางกับโคมไฟเทียน" 
+                 loading="lazy">
+            <div class="gallery-overlay">
+              <h4>มุมโต๊ะไม้นั่งรับลม</h4>
+              <p>นั่งทานปังเย็นใต้แสงตะเกียงจำลอง ให้ฟีลชิลล์สุดๆ</p>
+            </div>
+          </div>
+
+          <!-- Atmosphere 6: ซุ้มดอกไม้และไฟปิงปอง -->
+          <div class="gallery-item">
+            <img src="บรรยากาศในร้าน/492518988_2527277434278270_2006123765050258299_n.jpg" 
+                 alt="ไฟปิงปองและซุ้มดอกไม้ยามค่ำคืน" 
+                 loading="lazy">
+            <div class="gallery-overlay">
+              <h4>แสงไฟและธรรมชาติ</h4>
+              <p>มุมนั่งใต้เงาไม้ประดับไฟปิงปอง สวยงามโรแมนติก</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info, Location & Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="sub-title">LOCATION & CONTACT</span>
+          <h2 class="section-title">พิกัดร้าน & ช่องทางติดต่อ</h2>
+          <div class="milk-drop-divider" aria-hidden="true">
+            <span></span><span class="drop"></span><span></span>
+          </div>
+          <p class="section-desc">
+            แวะมาสัมผัสความอร่อยและบรรยากาศอบอุ่น หรือติดตามโปรโมชั่นและทักทายกับเราได้ทางเพจ Facebook
+          </p>
+        </div>
+
+        <div class="contact-grid-main">
+          <!-- Left Column: Location & Google Map -->
+          <div class="contact-card location-card">
+            <div class="card-badge-header">
+              <span class="badge-icon">📍</span>
+              <h3>พิกัด & ที่ตั้งร้าน</h3>
+            </div>
+            
+            <p class="location-text">
+              <strong>ร้านเปรม นมสด (สาขาบุรีรัมย์)</strong><br>
+              ถนนจิระ ตำบลในเมือง อำเภอเมืองบุรีรัมย์ จังหวัดบุรีรัมย์ 31000
+            </p>
+
+            <div class="location-details-list">
+              <div class="detail-item">
+                <span class="detail-icon">🕒</span>
+                <div>
+                  <strong>เวลาเปิดบริการ:</strong>
+                  <span>ทุกวัน 17:00 น. - 22:00 น.</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🛵</span>
+                <div>
+                  <strong>ที่จอดรถ:</strong>
+                  <span>มีที่จอดรถมอเตอร์ไซค์และรถยนต์สะดวกสบายริมถนนหน้าร้าน</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🏡</span>
+                <div>
+                  <strong>จุดสังเกต:</strong>
+                  <span>ร้านสไตล์ Open-air โต๊ะไม้ ประดับไฟปิงปอง ป้ายกระดานดำหน้าร้านเด่นชัด</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Map Card / External Navigation -->
+            <div class="map-container">
+              <div class="map-mockup">
+                <div class="map-pin-pulse">
+                  <span class="pin-dot"></span>
+                  <div class="pin-popup">
+                    <strong>เปรม นมสด</strong>
+                    <span>ถ.จิระ อ.เมืองบุรีรัมย์</span>
+                  </div>
+                </div>
+                <div class="map-road-layer">
+                  <div class="road road-main"><span>ถ.จิระ (Jira Rd.)</span></div>
+                  <div class="road road-sub"></div>
+                </div>
+              </div>
+              <div class="map-action">
+                <a href="https://www.google.com/maps/search/?api=1&query=%E0%B9%80%E0%B8%9B%E0%B8%A3%E0%B8%A1+%E0%B8%99%E0%B8%A1%E0%B8%AA%E0%B8%94+%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%88%E0%B8%B4%E0%B8%A3%E0%B8%B0+%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%A1%E0%B8%A2%E0%B9%8C" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn btn-outline btn-block btn-map">
+                  <span>🧭 เปิดแผนที่นำทาง (Google Maps)</span>
+                  <span class="external-icon">&nearr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Official Facebook Page & Social Connect -->
+          <div class="contact-card facebook-card">
+            <div class="card-badge-header fb-badge-header">
+              <span class="fb-icon-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </span>
+              <h3>ช่องทางติดต่อหลัก (Facebook)</h3>
+            </div>
+
+            <!-- Facebook Page Simulation Card -->
+            <div class="fb-profile-box">
+              <div class="fb-cover-banner">
+                <img src="บรรยากาศในร้าน/493940943_2527267730945907_8741123150059989016_n.jpg" alt="ภาพปกบรรยากาศร้านเปรมนมสด" class="fb-cover-img" loading="lazy">
+                <span class="fb-live-badge">เพจทางการ</span>
+              </div>
+              <div class="fb-profile-content">
+                <div class="fb-avatar-wrap">
+                  <img src="logo.png" alt="โลโก้เพจ เปรม นมสด" class="fb-avatar-img">
+                </div>
+                <div class="fb-details">
+                  <div class="fb-name-row">
+                    <h4 class="fb-page-title">เปรม นมสด</h4>
+                    <span class="fb-check-badge" title="เพจของร้าน">✓</span>
+                  </div>
+                  <p class="fb-page-category">ร้านนมสด • ขนมปังปิ้ง • เครื่องดื่มและของว่าง</p>
+                  <p class="fb-page-intro">
+                    "ต้มสด หอมกรุ่น ปังปิ้งเตาร้อน ราคามิตรภาพ แวะมานั่งชิลล์พูดคุยกันได้ทุกคืนครับ"
+                  </p>
+                </div>
+              </div>
+
+              <!-- Facebook Action Buttons -->
+              <div class="fb-actions-group">
+                <a href="https://www.facebook.com/premnomsod" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn btn-facebook btn-block">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  <span>ไปยังเพจ Facebook : เปรม นมสด</span>
+                  <span class="btn-arrow">&rarr;</span>
+                </a>
+
+                <a href="https://m.me" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn btn-messenger btn-block">
+                  <span class="messenger-icon">💬</span>
+                  <span>ส่งข้อความสอบถามทาง Facebook Messenger</span>
+                </a>
+              </div>
+
+              <div class="fb-features-pills">
+                <span class="fb-pill">🔔 อัปเดตเมนูใหม่</span>
+                <span class="fb-pill">🏷️ โปรโมชั่นพิเศษ</span>
+                <span class="fb-pill">⚡ ตอบกลับรวดเร็ว</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modern Image Preview Modal (Dialog Native) -->
+  <dialog class="image-dialog" id="imageModal" aria-labelledby="modalCaption">
+    <div class="dialog-content">
+      <button type="button" class="dialog-close" id="dialogCloseBtn" aria-label="ปิดรูปภาพ">&times;</button>
+      <div class="dialog-image-wrapper">
+        <img src="" alt="" id="modalImg" class="dialog-image">
+      </div>
+      <p id="modalCaption" class="dialog-caption"></p>
+    </div>
+  </dialog>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="logo.png" alt="โลโก้เปรมนมสด" class="footer-logo" width="50" height="50">
+          <div>
+            <h3 class="footer-title">เปรม นมสด</h3>
+            <p class="footer-desc">ความสุขละมุนในทุกค่ำคืน นมสดแท้ ขนมปังปิ้ง และของหวานชื่นใจ</p>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <h4>เมนูลัด</h4>
+          <ul>
+            <li><a href="#hero">หน้าแรก</a></li>
+            <li><a href="#story">เรื่องราว</a></li>
+            <li><a href="#menu">เมนูอาหาร</a></li>
+            <li><a href="#atmosphere">บรรยากาศ</a></li>
+            <li><a href="#pricing">ราคา</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>ที่ตั้ง & ติดต่อเรา</h4>
+          <p class="footer-time">🕒 ทุกวัน: 17:00 - 22:00 น.</p>
+          <p class="footer-location">📍 ถ.จิระ ต.ในเมือง อ.เมืองบุรีรัมย์ จ.บุรีรัมย์</p>
+          <div class="footer-social-link">
+            <a href="https://www.facebook.com/premnomsod" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="footer-fb-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              <span>Facebook: เปรม นมสด</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> เปรม นมสด. All rights reserved. • พัฒนาสำหรับ Web Development Lab 2</p>
+        <a href="#hero" class="back-to-top" aria-label="กลับสู่ด้านบน">
+          <span>ขึ้นข้างบน</span> &uarr;
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
